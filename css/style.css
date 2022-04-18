@@ -1,3 +1,13 @@
+#title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(4, 135, 250);
+}
+
+#map {
+    height: 700px;
+    width: 100%;
+  }
 html,
 body {
     align-items: center;
@@ -9,20 +19,3 @@ body {
     justify-content: center;
     width: 100%;
 }
-
-section {
-    font-family: sans-serif;
-    font-weight: lighter;
-    font-size: 0.75rem;
-} */
-
-#title {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #000;
-}
-
-#map {
-    height: 700px;
-    width: 100%;
-  }
