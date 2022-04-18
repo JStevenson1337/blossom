@@ -9,7 +9,7 @@ import L from 'react-leaflet'
 
 const position = [51.505, -0.09]
 const icon = L.icon({
-    
+    iconURL: "../blossom/location.png"
 })
 
 export default function Maps () {
