@@ -1,10 +1,10 @@
 # blossom
 Hack Sprint 1 (Holberton)
 
-Generate Map
-Get Location
-Genertate List of Locations based on Location Relative to Player from Map GeoJSON
-Generate Map based on List of Locations
+- Generate Map
+- Get Location
+- Genertate List of Locations based on Location Relative to Player from Map GeoJSON
+- Generate Map based on List of Locations
 
     
     []: # Language: html

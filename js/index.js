@@ -1,14 +1,10 @@
-window.onload = function() {
-  getLocation();
-};
-
-
 var x = document.getElementById("location");
+getLocation();
 
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
+  } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
@@ -16,14 +12,17 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
-}
-const mymap = L.map('map').setView([0, 0], 1);
-const attribution =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
-const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const tiles = L.tileLayer(tileUrl, { attribution });
-tiles.addTo(mymap);
+  var lat = position.coords.latitude;
+  var lon = position.coords.longitude;
+
+}
+map = L.
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 getMap();
 setInterval(getMap, 1000);
