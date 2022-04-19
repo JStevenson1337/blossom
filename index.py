@@ -27,8 +27,8 @@ headers = {
 # }
 
 
-# html = requests.get("https://unsplash.com/s/photos/flowers")
-html = requests.get("https://www.google.com/search?q=flowers&tbm=isch&source=hp&biw=948&bih=952&ei=bKteYufDIoS4qtsP_IG5oAo&iflsig=AHkkrS4AAAAAYl65fP8neUwk2mlQr7kj0Lhw_6TUBNdE&ved=0ahUKEwjnqeXZkKD3AhUEnGoFHfxADqQQ4dUDCAc&uact=5&oq=flowers&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCAgAEIAEELEDMgUIABCABDIICAAQgAQQsQMyCAgAEIAEELEDMgsIABCABBCxAxCDATIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQNQAFjkCWDtCmgAcAB4AIABhgGIAZYEkgEDNS4ymAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img")
+html = requests.get("https://unsplash.com/s/photos/flowers")
+#html = requests.get("https://www.google.com/search?q=flowers&tbm=isch&source=hp&biw=948&bih=952&ei=bKteYufDIoS4qtsP_IG5oAo&iflsig=AHkkrS4AAAAAYl65fP8neUwk2mlQr7kj0Lhw_6TUBNdE&ved=0ahUKEwjnqeXZkKD3AhUEnGoFHfxADqQQ4dUDCAc&uact=5&oq=flowers&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCAgAEIAEELEDMgUIABCABDIICAAQgAQQsQMyCAgAEIAEELEDMgsIABCABBCxAxCDATIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQNQAFjkCWDtCmgAcAB4AIABhgGIAZYEkgEDNS4ymAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img")
 soup = BeautifulSoup(html.text, "lxml")
 image_container = soup.find_all('img')
 example = image_container[0]
@@ -57,7 +57,7 @@ with open("images.txt", "r") as f:
                     plt.imshow(image)
         except Exception as e:
             print(e)
-        finally:
-            del response
+            continue
+
 
 print("Done")
