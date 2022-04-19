@@ -14,6 +14,5 @@ params = {
 }
 
 html = requests.get("https://www.google.com/search", params=params, headers=headers)
-soup = BeautifulSoup(html.text, 'lxml')
-print(soup.prettify())
+soup = BeautifulSoup(html.text, "lxml")
 
