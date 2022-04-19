@@ -1,5 +1,5 @@
 from flask import render_template, Flask, request, make_response
-from models import Calendar, Event
+
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 ##################### HOME PAGE #########################
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 

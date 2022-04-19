@@ -25,3 +25,9 @@ py -m pip install --user virtualenv
 py -m venv env
 #activating virtual env
 .\env\Scripts\activate
+
+
+
+#------------RUN----------#
+export FLASK_APP=app
+flask run
