@@ -19,7 +19,17 @@ html = requests.get("https://unsplash.com/s/photos/flowers")
 soup = BeautifulSoup(html.text, "lxml")
 image_container = soup.find_all('img')
 example = image_container[0]
-print(example)
+example.attrs['src']
+FILE = open("images.txt", "w")
+try:
+    for image in image_container:
+        FILE.write(image.attrs['src'] + "\n")
+except Exception as e:
+    print(e)
+    print_tb(e)
+FILE.close()
+
+
 
 
 
