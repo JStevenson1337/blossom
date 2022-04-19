@@ -1,7 +1,12 @@
+import fileinput
+import shutil
 from tkinter import image_names
 from traceback import print_tb
 import requests, lxml, re, json 
 from bs4 import BeautifulSoup, ResultSet
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
 
 headers = {
     "User-Agent":
@@ -26,8 +31,28 @@ try:
         FILE.write(image.attrs['src'] + "\n")
 except Exception as e:
     print(e)
-    print_tb(e)
-FILE.close()
+finally:
+    FILE.close()
+
+
+with open("images.txt", "r") as f:
+    for line in f:
+        print(line)
+        try:
+            response = requests.get(line, stream=True)
+            while line:
+                line = response.raw.read(1024)
+                with open(line, "wb") as f:
+                    shutil.copyfileobj(response.raw, f)
+                    image = mpimg.imread(line)
+                    imgplot = plt.imshow(image)
+                    plt.imshow(image)
+        except Exception as e:
+            print(e)
+        finally:
+            del response
+
+print("Done")
 
 
 
