@@ -1,5 +1,5 @@
 import requests, lxml, re, json 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, ResultSet
 
 headers = {
     "User-Agent":
@@ -15,4 +15,18 @@ params = {
 
 html = requests.get("https://www.google.com/search", params=params, headers=headers)
 soup = BeautifulSoup(html.text, "lxml")
+ResultSet(soup.find_all("div", {"class": "rg_meta"}))
+
+FILE = open("lxml.html", "w")
+try:
+    FILE.write(soup.prettify())
+except Exception as e:
+    print(e)
+finally:
+    FILE.close()
+
+
+
+
+
 
