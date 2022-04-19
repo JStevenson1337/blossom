@@ -1,3 +1,5 @@
+from tkinter import image_names
+from traceback import print_tb
 import requests, lxml, re, json 
 from bs4 import BeautifulSoup, ResultSet
 
@@ -13,20 +15,11 @@ params = {
     "ijn": "0",
 }
 
-html = requests.get("https://www.google.com/search", params=params, headers=headers)
+html = requests.get("https://unsplash.com/s/photos/flowers")
 soup = BeautifulSoup(html.text, "lxml")
-ResultSet(soup.find_all("div", {"class": "rg_meta"}))
-
-FILE = open("lxml.html", "w")
-try:
-    FILE.write(soup.prettify())
-except Exception as e:
-    print(e)
-finally:
-    FILE.close()
-
-
-
+image_container = soup.find_all('img')
+example = image_container[0]
+print(example)
 
 
 
