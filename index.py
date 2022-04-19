@@ -6,6 +6,8 @@ import requests, lxml, re, json
 from bs4 import BeautifulSoup, ResultSet
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import pandas as pd
+from IPython.display import Image, HTML
 
 
 headers = {
