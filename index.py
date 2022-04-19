@@ -2,13 +2,17 @@ import fileinput
 import shutil
 from tkinter import image_names
 from traceback import print_tb
-import requests, lxml, re, json 
+import requests
+import lxml
+import re
+import json
 from bs4 import BeautifulSoup, ResultSet
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 # import pandas as pd
 # from IPython.display import Image, HTML
 
+# https://towardsdatascience.com/a-tutorial-on-scraping-images-from-the-web-using-beautifulsoup-206a7633e948
 
 headers = {
     "User-Agent":
@@ -57,8 +61,3 @@ with open("images.txt", "r") as f:
             del response
 
 print("Done")
-
-
-
-
-
