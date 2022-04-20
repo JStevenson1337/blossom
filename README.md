@@ -1,10 +1,11 @@
 README.md
 
 <h1>Blossom</h1>
-<br />
+
 <p>
   Blossom is a simple, fast, and reliable web app module framework written in Python, Flask, and Html. Blossom scrapes various websites for pictures of flowers and presents the picture on a webpage equipped with a next and prev button to make scrolling through fun and enjoyable. It is designed to be easy to use and easy to extend. 
 </p>
+<br >
 
 ##FOR LINUX/MAC
 ####Installing venv 
@@ -15,7 +16,7 @@ README.md
 `source env/bin/activate`
 <br />
 <br />
-FOR WINDOWS
+##FOR WINDOWS
 ####Installing venv
 `py -m pip install --user virtualenv`
 ####creating virtual env
