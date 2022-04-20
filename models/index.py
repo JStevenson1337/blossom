@@ -51,7 +51,7 @@ def show_images():
                 count += 1
             except Exception as e:
                 print(e)
-                #print_tb(e)
+                print_tb(e)
                 continue
 
 scrape_urls()

@@ -31,3 +31,10 @@ py -m venv env
 #------------RUN----------#
 export FLASK_APP=app
 flask run
+
+export FLASK_ENV=development
+flask run
+
+
+#------------EXTERNAL----------#
+flask run --host=0.0.0.0
