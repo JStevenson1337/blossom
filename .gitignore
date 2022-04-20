@@ -24,3 +24,7 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+
+/static/*images*/*
+static/images/images.txt

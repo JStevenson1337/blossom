@@ -4,9 +4,6 @@ from tkinter import image_names
 from traceback import print_tb
 from turtle import screensize
 import requests
-import lxml
-import re
-import json
 from bs4 import BeautifulSoup, ResultSet
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -27,6 +24,7 @@ html = requests.get("https://unsplash.com/s/photos/flowers")
 
 IMGDIR = "static/images/"
 
+
 def scrape_urls():
     soup = BeautifulSoup(html.text, "lxml")
     image_container = soup.find_all('img')
@@ -42,22 +40,19 @@ def scrape_urls():
         FILE.close()
 
 def show_images():
+    count = 0
+
     with open(os.path.join(IMGDIR, "images.txt"), "r") as f:
         for line in f:
-            print(line)
             try:
-                response = requests.get(line, stream=True)
-                for chunk in response.iter_content(chunk_size=128):
-                    with open(os.path.join(IMGDIR, "images.jpg"), "wb") as f:
-                        f.write(chunk)
-                        shutil.copyfileobj(response.raw, f)
-                        image = mpimg.imread(line)
-                        imgplot = plt.imshow(image)
-                        plt.imshow(image)
+                img_data = requests.get(line, headers=headers)
+                with open(os.path.join(IMGDIR, "%s-image.jpg" % count), "wb") as handler:
+                    handler.write(img_data.content)
+                count += 1
             except Exception as e:
                 print(e)
+                #print_tb(e)
                 continue
-
 
 scrape_urls()
 show_images()
