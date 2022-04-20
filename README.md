@@ -1,40 +1,37 @@
 README.md
-[]: # Language: Python3
-[]: # Path: setup.py
-setup.py
-[]: # Language: Python3
-[]: # Path: tests/test_*.py
-tests/test_*.py
-[]: # Language: Python3
-[]: # Path: tests/test_*.py
 
+<h1>Blossom</h1>
+<br />
+<p>
+  Blossom is a simple, fast, and reliable web app module framework written in Python, Flask, and Html. Blossom scrapes various websites for pictures of flowers and presents the picture on a webpage equipped with a next and prev button to make scrolling through fun and enjoyable. It is designed to be easy to use and easy to extend. 
+</p>
 
-#------FOR LINUX/MAC---------#
-#installing venv 
-sudo apt-get install python3.6-venv
-#creating virtual env
-python3 -m venv env
-#activating virtual env
-source env/bin/activate
+##FOR LINUX/MAC
+####Installing venv 
+`sudo apt-get install python3.6-venv`
+####Creating Virtual Environment
+`python3 -m venv env`
+####activating virtual env
+`source env/bin/activate`
+<br />
+<br />
+FOR WINDOWS
+####Installing venv
+`py -m pip install --user virtualenv`
+####creating virtual env
+`py -m venv env`
+####activating virtual env
+`.\env\Scripts\activate`
+<br />
 
+<br />
+##RUN
+`export FLASK_APP=app`
+`flask run`
+<br />
+`export FLASK_ENV=development`
+`flask run`
+<br />
 
-#-------FOR WINDOWS----------#
-#installing venv
-py -m pip install --user virtualenv
-#creating virtual env
-py -m venv env
-#activating virtual env
-.\env\Scripts\activate
-
-
-
-#------------RUN----------#
-export FLASK_APP=app
-flask run
-
-export FLASK_ENV=development
-flask run
-
-
-#------------EXTERNAL----------#
-flask run --host=0.0.0.0
+##EXTERNAL
+`flask run --host=0.0.0.0`
