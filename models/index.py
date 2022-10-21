@@ -3,11 +3,15 @@ import shutil
 from tkinter import image_names
 from traceback import print_tb
 from turtle import screensize
+from defer import return_value
+from numpy import source
 import requests
 from bs4 import BeautifulSoup, ResultSet
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import os
+from urllib.request import urlopen
+
 
 # import pandas as pd
 # from IPython.display import Image, HTML
@@ -20,24 +24,49 @@ headers = {
 }
 
 html = requests.get("https://unsplash.com/s/photos/flowers")
-#html = requests.get("https://www.google.com/search?q=flowers&tbm=isch&source=hp&biw=948&bih=952&ei=bKteYufDIoS4qtsP_IG5oAo&iflsig=AHkkrS4AAAAAYl65fP8neUwk2mlQr7kj0Lhw_6TUBNdE&ved=0ahUKEwjnqeXZkKD3AhUEnGoFHfxADqQQ4dUDCAc&uact=5&oq=flowers&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCAgAEIAEELEDMgUIABCABDIICAAQgAQQsQMyCAgAEIAEELEDMgsIABCABBCxAxCDATIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQNQAFjkCWDtCmgAcAB4AIABhgGIAZYEkgEDNS4ymAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img")
 
 IMGDIR = "static/images/"
+LOGDIR = "../logs/"
+
+def log_images():
+    pass
+
+# has class but no ID
+def has_class_but_no_id(tag):
+    return tag.has_attr('class') and not tag.has_attr('id')
+
+# Validating the images
+def is_image(file):
+    return file.endswith(".jpg" or ".png" or ".jpeg")
+
+#TODO: Create a function to hash images and store them in a database
+def hash_images(*image_hash):
+    pass
+
+def get_data(url):
+    data = requests.get(url)
+    soup = BeautifulSoup(htmldata, 'html, parser')
+    for item in soup.find_all('img'):
+        print(item['src'])
+        
+def store_images(image_url):
+    with 
 
 
-def scrape_urls():
-    soup = BeautifulSoup(html.text, "lxml")
-    image_container = soup.find_all('img')
-    example = image_container[0]
-    example.attrs['src']
-    FILE = open(os.path.join(IMGDIR, "images.txt"), "w")
-    try:
-        for image in image_container:
-            FILE.write(image.attrs['src'] + "\n")
-    except Exception as e:
-        print(e)
-    finally:
-        FILE.close()
+        # print(kwargs)
+        # soup = BeautifulSoup(html.text, "lxml")
+        # image_container = soup.find_all('img')
+        # example = image_container[0]
+        # example.attrs['src']
+        # FILE = open(os.path.join(IMGDIR, "images.txt"), "w")
+        # try:
+        #     for image in image_container:
+        #         FILE.write(image.attrs['src'] + "\n")
+        # except Exception as e:
+        #     print(e)
+        # finally:
+        #     FILE.close()
+
 
 def show_images():
     count = 0
@@ -54,6 +83,16 @@ def show_images():
                 #print_tb(e)
                 continue
 
-scrape_urls()
-show_images()
-print("Done")
+
+
+int main():
+    scrape_urls(True)
+    show_images()
+
+    return_value(0)
+
+
+if __name__ == "__main__":
+    main()
+
+
